@@ -1,0 +1,10 @@
+*.docx
+*.sql
+*.md
+*.toml
+*.lock
+uv.lock
+.venv/
+.python-version
+data-engineering-zoomcamp-main/
+planx-backend/
