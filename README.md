@@ -1,4 +1,4 @@
-# new_project
+# first project
 
 这是我的第一个 Python 小项目，主要用来练习文件操作和数据处理。
 
