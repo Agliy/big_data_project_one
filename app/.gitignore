@@ -1,0 +1,4 @@
+*.parquet
+__pycache__/
+*.py[zodz]
+*$py.class
