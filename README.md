@@ -76,7 +76,6 @@ terraform destroy
 
 ## 注意事项
 
-- `keys/` 目录、`*.tfvars`、`*.tfstate` 已加入 `.gitignore`，不会上传 GitHub
 - 使用完云资源记得执行 `terraform destroy`，避免产生额外费用
 - 阿里云 AccessKey 请使用主账号或授权了对应权限的 RAM 用户
 
