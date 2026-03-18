@@ -1,0 +1,44 @@
+uv run python ingest_data.py `
+--pg-user=root `
+--pg-pass=root `
+--pg-host=localhost `
+--pg-port=5433 `
+--pg-db=aegley_db `
+--year=2025 `
+--month=11 `
+--target-table=green_trip_data_2025_11 `
+--chunksize=100000
+
+docker run -it --rm  `
+    --network=pipeline_default `
+    taxi_ingest:v001 `
+    --pg-user=root `
+    --pg-pass=root `
+    --pg-host=postgres `
+    --pg-port=5432 `
+    --pg-db=aegley_db `
+    --year=2025 `
+    --month=11 `
+    --target-table=green_trip_data_2025_11 `
+    --chunksize=100000 
+
+
+docker run -it --rm `
+    --network=pipeline_default `
+    --name=postgres `
+    -v Aegley_db:/var/lib/postgresql/data `
+    -e POSTGRES_USER="root" `
+    -e POSTGRES_PASSWORD="root" `
+    -e POSTGRES_DB="aegley_db" `
+    -p 5433:5432 `
+    postgres:17
+
+# In another terminal, run pgAdmin on the same network
+docker run -it `
+-e PGADMIN_DEFAULT_EMAIL="admin@admin.com" `
+-e PGADMIN_DEFAULT_PASSWORD="root" `
+-v pgadmin_data:/var/lib/pgadmin `
+-p 8085:80 `
+--network=pg-network `
+--name pgadmin `
+dpage/pgadmin4

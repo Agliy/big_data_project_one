@@ -2,3 +2,16 @@
 __pycache__/
 *.py[zodz]
 *$py.class
+
+# 阿里云凭证文件（绝对不能上传！）
+*.txt
+
+# Terraform 状态文件（包含云资源的敏感信息）
+*.tfstate
+*.tfstate.backup
+
+# 变量赋值文件（可能包含 AccessKey 等敏感信息）
+*.tfvars
+
+# Terraform 运行时文件（本地生成，不需要同步）
+*.terraform.lock.hcl
